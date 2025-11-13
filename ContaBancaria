@@ -1,0 +1,52 @@
+public class ContaBancaria {
+    private String numeroConta;
+    private String titular;
+    private double saldo;
+    public String getNumeroConta() {
+        return numeroConta;
+    }
+    public void setNumeroConta(String numeroConta) {
+        if(numeroConta == " " || numeroConta == null){
+            System.out.println("numero da conta invalido;");
+        }
+        else{
+        this.numeroConta = numeroConta;
+        }
+    }
+    public String getTitular() {
+        return titular;
+    }
+    public void setTitular(String titular){
+    if(titular == " " || titular == null){
+            System.out.println("numero da conta invalido;");
+        }
+        else{
+        this.titular = titular;
+        }
+    }
+    
+    public double getSaldo() {
+        return saldo;
+    }
+    public void setsaldo(double saldo) 
+    {
+        this.saldo = saldo;
+    }
+    public void depositar(double valorDepositado){
+    if (valorDepositado > 0){
+       saldo += valorDepositado;
+        }
+        else{System.out.println("o valor prescisa ser positivo");}
+    }
+    public void sacar (double valorDeSaque){
+        if (valorDeSaque > 0){
+            if(valorDeSaque <= saldo){
+                saldo -= valorDeSaque;
+                System.out.println("saque realizado com sucesso");
+            }
+        }else{
+            System.out.println("operacao invalida");
+        }
+        
+    }
+}
